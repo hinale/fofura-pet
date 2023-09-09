@@ -1,10 +1,10 @@
-const Intitution = require('./Institution');
+const Institution = require('./Institution');
 
 describe("class Intitution", () => {
   let institution;
 
   beforeEach(() => {
-    institution = new Intitution("DoaPet", "doapet@mail.com", "senha123", "41912341234", "Rua Av. 15 de Setembro, 444 - Centro", "Curitiba", "PR");
+    institution = new Institution("DoaPet", "doapet@mail.com", "41912341234", "Rua Av. 15 de Setembro, 444 - Centro", "Curitiba", "PR");
   })
 
   it("should check creating a user", () => {
@@ -18,16 +18,6 @@ describe("class Intitution", () => {
     };
 
     expect(institution).toEqual(result);
-  });
-
-  it("should check get password function", () => {
-    expect(institution.password).toEqual("senha123");
-  });
-
-  it("should check set password function", () => {
-    institution.password = "password123";
-
-    expect(institution.password).toEqual("password123");
   });
 
   it("should check a institution changes", () => {
@@ -44,8 +34,19 @@ describe("class Intitution", () => {
         UF: "PR"
       };
 
-    institution.editIntitution(data);
+    institution.editInstitution(data);
 
     expect(institution).toEqual(result);
   });
+
+  it("should check return when a user changes and attribute not be listed", () => {
+    const 
+      data = {
+        phone: "41912341234",
+        code: 123
+      },
+      result = `code is an invalid information`;
+
+    expect(() => institution.editInstitution(data)).toThrow(result);
+  })
 })
