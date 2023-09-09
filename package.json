@@ -1,0 +1,14 @@
+{
+  "name": "projeto-final",
+  "version": "1.0.0",
+  "description": "Projeto Final do curso Imersão Javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Letícia Amaral de Lara",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.6.4"
+  }
+}
