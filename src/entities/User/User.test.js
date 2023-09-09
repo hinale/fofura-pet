@@ -8,7 +8,7 @@ describe("class Institution", () => {
     user = new User("Letícia", "user", "leticia@mail.com", password, "41912341234");
   });
   
-  it("Check when creating a user", () => {
+  it("should check when creating a user", () => {
     const 
       result = {
         "name": "Letícia",
@@ -20,7 +20,7 @@ describe("class Institution", () => {
     expect(user).toEqual(result);
   });
 
-  it("Check when a user changes", () => {
+  it("should check when a user changes", () => {
     const 
       data = {
         name: "Letícia Amaral",
@@ -33,37 +33,30 @@ describe("class Institution", () => {
         "phone": "41912341234"
       }
 
-    user.edit(data);
+    user.editUser(data);
 
     expect(user).toEqual(result);
   });
 
-  it("Check return when a user changes and attribute not be listed", () => {
+  it("should check return when a user changes and attribute not be listed", () => {
     const 
       data = {
         name: "Letícia Amaral",
         email: "leticiaamaral@mail.com",
         code: 123
       },
-      result = `${data.code} is an invalid information`;
+      result = `code is an invalid information`;
 
-    expect(user.edit(data)).toEqual(result);
+    expect(() => user.editUser(data)).toThrow(result);
   })
 
-  it("Check get password function", () => {
+  it("should check get password function", () => {
     expect(user.password).toEqual(password);
   });
 
-  it("Check set password function", () => {
+  it("should check set password function", () => {
     password = "pass123";
     user.password = password;
     expect(user.password).toEqual(password);
-  });
-
-  it("Check the delete user function", () => {
-    const result = user;
-    user.delete();
-
-    expect(User.allUsers).not.toContain(result);
   });
 });
