@@ -16,9 +16,14 @@ Criar um portal onde seja possível cadastrar ONG's que ajudam animais e locais 
 - Filtro de locais pelo tipo de atentimento ou serviço procurado;
 - Informações de doações;
 
-## Tecnoligias usadas
+## Tecnologias usadas
 
 - Javascript
 - NodeJS
 - Jest
 - POO
+
+## Metodologias usadas
+
+- TDD
+- Teste, desenvolvimento e reforação
