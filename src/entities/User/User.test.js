@@ -38,6 +38,18 @@ describe("class Institution", () => {
     expect(user).toEqual(result);
   });
 
+  it("Check return when a user changes and attribute not be listed", () => {
+    const 
+      data = {
+        name: "Letícia Amaral",
+        email: "leticiaamaral@mail.com",
+        code: 123
+      },
+      result = `${data.code} is an invalid information`;
+
+    expect(user.edit(data)).toEqual(result);
+  })
+
   it("Check get password function", () => {
     expect(user.password).toEqual(password);
   });
