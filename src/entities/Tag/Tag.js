@@ -1,16 +1,24 @@
 class Tag {
-  #tags = new Set();
+  tags = new Set();
 
-  addTag(tag) {
-    this.#tags.add(tag)
+  add(tag) {
+    this.tags.add(tag)
   }
 
-  removeTag(tag) {
-    this.#tags.delete(tag);
+  remove(tag) {
+    this.tags.delete(tag);
   }
 
   get allTags() {
-    return Array.from(this.#tags);
+    return Array.from(this.tags);
+  }
+
+  has(tag) {
+    return this.tags.has(tag);
+  }
+
+  clear() {
+    this.tags.clear();
   }
 }
 

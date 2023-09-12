@@ -8,21 +8,21 @@ describe("class Tag", () => {
   });
 
   it('should add a tag', () => {
-    tag.addTag('Adoção');
+    tag.add('Adoção');
     expect(tag.allTags).toContain('Adoção');
   });
 
   it('should remove a tag', () => {
-    tag.addTag('Adoção');
-    tag.addTag('Tratamento');
-    tag.removeTag('Tratamento');
+    tag.add('Adoção');
+    tag.add('Tratamento');
+    tag.remove('Tratamento');
     expect(tag.allTags).not.toContain('Tratamento');
   });
 
   it('should return all tags', () => {
-    tag.addTag('Adoção');
-    tag.addTag('Tratamento');
-    tag.addTag('Abrigo');
+    tag.add('Adoção');
+    tag.add('Tratamento');
+    tag.add('Abrigo');
     const tags = tag.allTags;
     expect(tags).toContain('Adoção');
     expect(tags).toContain('Tratamento');
@@ -31,8 +31,21 @@ describe("class Tag", () => {
   });
 
   it('should not add duplicate tags', () => {
-    tag.addTag('Adoção');
-    tag.addTag('Adoção');
+    tag.add('Adoção');
+    tag.add('Adoção');
     expect(tag.allTags).toEqual(['Adoção']);
+  });
+
+  it('should check if a tag exists', () => {
+    tag.add('Adoção');
+    expect(tag.has('Adoção')).toBe(true);
+    expect(tag.has('Sports')).toBe(false);
+  });
+
+  it('should clear all tags', () => {
+    tag.add('Adoção');
+    tag.add('Tratamento');
+    tag.clear();
+    expect(tag.allTags).toEqual([]);
   });
 });
