@@ -1,3 +1,4 @@
+const Tag = require("../../entities/Tag/Tag");
 const InstitutionRepositoty = require("./InstitutionRepository");
 
 describe("class InstitutionRepository", () => {
@@ -15,7 +16,8 @@ describe("class InstitutionRepository", () => {
       phone: "41912341234",
       address: "Rua Av. 15 de Setembro, 444 - Centro",
       city: "Curitiba",
-      UF: "PR"
+      UF: "PR",
+      tags: new Tag()
     };
     expect(institution).toEqual(result);
     expect(institutionRepository.allInstitutions).toContain(institution);
@@ -33,7 +35,8 @@ describe("class InstitutionRepository", () => {
       phone: "41912341234",
       address: "Rua 7 de Setembro, 445 - Centro",
       city: "Curitiba",
-      UF: "PR"
+      UF: "PR",
+      tags: new Tag()
     };
     institution.editInstitution(data);
     expect(institution).toEqual(result);

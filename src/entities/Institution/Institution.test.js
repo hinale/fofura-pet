@@ -1,3 +1,4 @@
+const Tag = require('../Tag/Tag');
 const Institution = require('./Institution');
 
 describe("class Intitution", () => {
@@ -14,7 +15,8 @@ describe("class Intitution", () => {
       phone: "41912341234",
       address: "Rua Av. 15 de Setembro, 444 - Centro",
       city: "Curitiba",
-      UF: "PR"
+      UF: "PR",
+      tags: new Tag()
     };
 
     expect(institution).toEqual(result);
@@ -31,7 +33,8 @@ describe("class Intitution", () => {
         phone: "412341234",
         address: "Rua Av. 15 de Setembro, 444 - Centro",
         city: "Curitiba",
-        UF: "PR"
+        UF: "PR",
+        tags: new Tag()
       };
 
     institution.editInstitution(data);
