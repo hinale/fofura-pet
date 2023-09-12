@@ -9,21 +9,21 @@ describe("class Tag", () => {
 
   it('should add a tag', () => {
     tag.add('Adoção');
-    expect(tag.allTags).toContain('Adoção');
+    expect(tag.all).toContain('Adoção');
   });
 
   it('should remove a tag', () => {
     tag.add('Adoção');
     tag.add('Tratamento');
     tag.remove('Tratamento');
-    expect(tag.allTags).not.toContain('Tratamento');
+    expect(tag.all).not.toContain('Tratamento');
   });
 
   it('should return all tags', () => {
     tag.add('Adoção');
     tag.add('Tratamento');
     tag.add('Abrigo');
-    const tags = tag.allTags;
+    const tags = tag.all;
     expect(tags).toContain('Adoção');
     expect(tags).toContain('Tratamento');
     expect(tags).toContain('Abrigo');
@@ -33,7 +33,7 @@ describe("class Tag", () => {
   it('should not add duplicate tags', () => {
     tag.add('Adoção');
     tag.add('Adoção');
-    expect(tag.allTags).toEqual(['Adoção']);
+    expect(tag.all).toEqual(['Adoção']);
   });
 
   it('should check if a tag exists', () => {
@@ -46,6 +46,6 @@ describe("class Tag", () => {
     tag.add('Adoção');
     tag.add('Tratamento');
     tag.clear();
-    expect(tag.allTags).toEqual([]);
+    expect(tag.all).toEqual([]);
   });
 });

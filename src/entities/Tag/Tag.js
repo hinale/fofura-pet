@@ -9,7 +9,7 @@ class Tag {
     this.tags.delete(tag);
   }
 
-  get allTags() {
+  get all() {
     return Array.from(this.tags);
   }
 

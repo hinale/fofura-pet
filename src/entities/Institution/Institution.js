@@ -1,3 +1,5 @@
+const Tag = require('../Tag/Tag');
+
 class Institution {
   name;
   email;
@@ -5,6 +7,7 @@ class Institution {
   address;
   city;
   UF;
+  tags = new Tag();
 
   constructor(name, email, phone, address, city, UF) {
     this.name = name;
