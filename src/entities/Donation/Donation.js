@@ -3,7 +3,11 @@ const Institution = require('../Institution/Institution');
 class Donation {
   institution = null;
   pixKey = "";
-  #donations = 0;
+
+  static #donations = {
+    allValue: 0,
+    info: []
+  };
 
   setInstitution(institution) {
     if(institution instanceof Institution) {
@@ -18,18 +22,34 @@ class Donation {
   }
 
   makeDonation(amount) {
-    if (this.institution) {
-      if (!this.pixKey) {
-        throw new Error('PIX key is not set');
-      }
+    this.validateDonation();
+    this.processDonation(amount);
+  }
 
-      this.#donations += amount;
-    } else {
+  validateDonation() {
+    if(!this.institution) {
       throw new Error('No institution set for donation');
+    }
+
+    if(!this.pixKey) {
+      throw new Error('PIX key is not set');
     }
   }
 
-  get donations() {
+  processDonation(amount) {
+    const donationInfo = {
+      institution: this.institution.name,
+      pixKey: this.pixKey,
+      amount,
+    };
+
+    Donation.#donations.allValue += amount;
+    Donation.#donations.info.push(donationInfo);
+  }
+
+  static get donations() {
     return this.#donations;
   }
 }
+
+module.exports = Donation;

@@ -35,6 +35,14 @@ describe('class Donation', () => {
     
     donation.makeDonation(100);
     
-    expect(donation.allDonations).toEqual(100);
+    const result = {
+      institution: donation.institution.name,
+      pixKey: donation.pixKey,
+      amount: 100,
+    }
+    
+    expect(Donation.donations.allValue).toEqual(100);
+    expect(Donation.donations.info.length).toBe(1);
+    expect(Donation.donations.info[0]).toEqual(result);
   });
 });
