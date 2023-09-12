@@ -25,5 +25,4 @@ Criar um portal onde seja possível cadastrar ONG's que ajudam animais e locais 
 
 ## Metodologias usadas
 
-- TDD
-- Teste, desenvolvimento e reforação
+- TDD: Red, Green, Refactor
