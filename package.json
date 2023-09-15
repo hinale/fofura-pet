@@ -2,7 +2,7 @@
   "name": "projeto-final",
   "version": "1.0.0",
   "description": "Projeto Final do curso Imersão Javascript",
-  "main": "index.js",
+  "main": "/pages/index.js",
   "scripts": {
     "test": "jest"
   },

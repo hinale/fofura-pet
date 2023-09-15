@@ -13,8 +13,8 @@ class InstitutionRepository {
     return institution;
   }
 
-  removeInstitution(institution) {
-    this.#institutions = this.#institutions.filter(i => i !== institution);
+  removeInstitution(name) {
+    this.#institutions = this.#institutions.filter(i => i.name !== name);
   }
 }
 

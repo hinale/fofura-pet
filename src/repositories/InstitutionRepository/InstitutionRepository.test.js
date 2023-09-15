@@ -55,7 +55,7 @@ describe("class InstitutionRepository", () => {
 
   it("should delete a user from IntitutionRepository", () => {
     const institution = institutionRepository.addInstitution("DoaPet", "doapet@mail.com", "41912341234", "Rua Av. 15 de Setembro, 444 - Centro", "Curitiba", "PR");
-    institutionRepository.removeInstitution(institution)
+    institutionRepository.removeInstitution(institution.name)
     expect(institutionRepository.allInstitutions).not.toContain(institution);
   });
 })

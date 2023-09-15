@@ -59,7 +59,7 @@ describe("class UserRepository", () => {
 
   it("should delete a user from UserRepository", () => {
     const user = userRepository.addUser('Letícia', 'user', 'leticia@mail.com', 'senha123', '41912341234');
-    userRepository.removeUser(user)
+    userRepository.removeUser(user.name)
     expect(userRepository.allUsers).not.toContain(user);
   });
 })

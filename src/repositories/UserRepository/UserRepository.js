@@ -13,8 +13,8 @@ class UserRepository {
     return user;
   }
 
-  removeUser(user) {
-    this.#users = this.#users.filter(u => u !== user);
+  removeUser(name) {
+    this.#users = this.#users.filter(u => u.name !== name);
   }
 }
 
