@@ -58,3 +58,47 @@ npm run test
 ```
 
 ![Alt text](image.png)
+
+## TDD - Test Driven Development
+
+### Red
+
+Primeiro foi criado os testes de cada classe planejada durante o desenvolvimento e com testes para seu constructor, getters, setters e métodos.
+
+![Alt text](image-1.png)
+
+### Green
+
+Criada a classe que atenda e cubra todos os testes criados.
+
+![Alt text](image-2.png)
+
+### Refactor
+
+A classe após criada é refatorada visando cubrir métodos que faltaram ou melhorar classes com relação ao clean code e fundamentos do SOLID, como a criação dos Repositories para separar das classes as funções estáticas e lista de elemntos da própria classe.
+
+![Alt text](image-3.png)
+
+## Estruturação
+
+- Entities:
+
+  - User;  
+    ![Alt text](image-4.png)
+
+  - Institution;  
+    ![Alt text](image-5.png)
+
+  - Tag;  
+    ![Alt text](image-6.png)
+
+  - Donation.  
+    ![Alt text](image-7.png)
+    ![Alt text](image-8.png)
+
+- Repositories:
+
+  - UserRepository;  
+    ![Alt text](image-9.png)
+  - InstitutionRepository.  
+    ![Alt text](image-10.png)
